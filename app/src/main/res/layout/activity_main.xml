@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Team A"
+                android:text="PAOK"
                 android:textSize="28sp" />
 
             <TextView
@@ -86,7 +86,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Team B"
+                android:text="Barcelona"
                 android:textSize="28sp" />
 
             <TextView
