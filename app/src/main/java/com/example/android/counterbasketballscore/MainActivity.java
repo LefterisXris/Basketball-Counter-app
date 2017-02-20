@@ -2,7 +2,10 @@ package com.example.android.counterbasketballscore;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ButtonBarLayout;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,10 +16,26 @@ public class MainActivity extends AppCompatActivity {
     int scoreTeamA = 0;
     int scoreTeamB = 0;
 
+    private TextView teamAName;
+    private TextView teamBName;
+    private EditText teamAEditText;
+    private EditText teamBEditText;
+    private Button teamAButton;
+    private Button teamBButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        teamAName = (TextView) findViewById(R.id.score_team_a_text_view);
+        teamBName = (TextView) findViewById(R.id.score_team_b_text_view);
+
+        teamAEditText = (EditText) findViewById(R.id.team_a_name_edit_text);
+        teamBEditText = (EditText) findViewById(R.id.team_b_name_edit_text);
+
+        teamAButton = (Button) findViewById(R.id.team_a_save_button);
+        teamBButton = (Button) findViewById(R.id.team_b_save_button);
     }
 
 
@@ -131,4 +150,42 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
         toast.show();
     }
+
+    //TODO Να μπορεί να θέτει ο χρήστης τα ονόματα των ομάδων.
+    public void showEditNames(View view){
+
+        //Θέτω ορατότητα
+        teamAName.setVisibility(View.GONE);
+        teamBName.setVisibility(View.GONE);
+
+        teamAEditText.setVisibility(View.VISIBLE);
+        teamBEditText.setVisibility(View.VISIBLE);
+
+        teamAButton.setVisibility(View.VISIBLE);
+        teamBButton.setVisibility(View.VISIBLE);
+    }
+
+    public void setNames(View view){
+        teamAName.setText(teamAEditText.getText().toString());
+        teamBName.setText(teamBEditText.getText().toString());
+
+        //Θέτω ορατότητα
+        teamAEditText.setVisibility(View.GONE);
+        teamBEditText.setVisibility(View.GONE);
+
+        teamAButton.setVisibility(View.GONE);
+        teamBButton.setVisibility(View.GONE);
+
+        teamAName.setVisibility(View.VISIBLE);
+        teamBName.setVisibility(View.VISIBLE);
+
+    }
+
+    //TODO Να μπορεί να θέτει ο χρήστης το φόντο της εφαρμογής.
+
+
+    //TODO Να μπορεί να μεγαλώνει (μέχρι κάποιο όριο) το display των πόντων.
+
+
+    //TODO Να μπορεί να κάνει share το τελικό σκορ.
 }

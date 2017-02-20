@@ -7,8 +7,7 @@
     android:orientation="vertical">
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,11 +26,36 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PAOK"
-                android:textSize="28sp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/team_a_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paok"
+                    android:textSize="28sp"
+                    android:visibility="visible"
+                    android:onClick="showEditNames"/>
+
+                <EditText
+                    android:id="@+id/team_a_name_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="rename"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/team_a_save_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="save"
+                    android:onClick="setNames"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/score_team_a_text_view"
@@ -83,11 +107,36 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Barcelona"
-                android:textSize="28sp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/team_b_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Barcelona"
+                    android:textSize="28sp"
+                    android:visibility="visible"
+                    android:onClick="showEditNames"/>
+
+                <EditText
+                    android:id="@+id/team_b_name_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="rename"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/team_b_save_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="save"
+                    android:onClick="setNames"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/score_team_b_text_view"
